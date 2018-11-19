@@ -21,8 +21,10 @@ def make_fasta_str(comment_in: str, seq_in: str) -> str:
     - If there is any kind of error, throw a ValueError exception.
     """
 
+    f=""
+    f= f + [str(seq_in[i:i+69]) for i in range (0,len(seq_in),69)]
+    print (f)
+    return f
 
-    return f"PENDING TO DO SOMETHING WITH {comment_in} and {seq_in}"
-
-
+make_fasta_str("exon", "098u098347502394875239408ru238ff2384fu203asdddddddddddddddddddddddddddddd94827f023984uf")
 #----------------------------------------------------------------------

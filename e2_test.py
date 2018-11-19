@@ -3,11 +3,15 @@
 e2 tests.
 """
 
+import e2
 
 #----------------------------------------------------------------------
 def test_get_exon_ranges_00():
     "get_exon_ranges() test."
 
+    ref = [(122, 320), (332, 455)]
+    res = e2.get_exon_ranges("exon   123..321 exon    333..456")
+    assert res == ref
     # ...
 
 

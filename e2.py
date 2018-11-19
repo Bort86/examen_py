@@ -5,6 +5,7 @@ e2
 
 from typing import List, Tuple
 
+import re
 
 #----------------------------------------------------------------------
 def get_exon_ranges(genbank_txt_in: str) -> List[Tuple[int, int]]:
@@ -18,8 +19,11 @@ def get_exon_ranges(genbank_txt_in: str) -> List[Tuple[int, int]]:
     - The end index is included.
     """
 
+    reg = r'exon\s*([0-9]*)..([0-9]*)'
+    pat = re.compile(reg)
+    matches = pat.finditer(genbank_txt_in)
 
-    return f"PENDING TO DO SOMETHING WITH {genbank_txt_in}"
+    array_exon = [(int(e.group(1))-1, int(e.group(2))-1)  for e in matches]
 
-
+    return array_exon
 #----------------------------------------------------------------------

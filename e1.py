@@ -2,7 +2,7 @@
 """
 e1
 """
-
+import re
 
 #----------------------------------------------------------------------
 def get_dna_seq(genbank_txt_in: str) -> str:
@@ -10,7 +10,17 @@ def get_dna_seq(genbank_txt_in: str) -> str:
     The DNA string is output in capital letters, wihtout whitespace or newlines.
     All DNA letters are allowed.
     """
-
-    return f"PENDING TO DO SOMETHING WITH {genbank_txt_in}"
+    f = ""
+    
+    f=genbank_txt_in.replace('\s','')
+    f=f.replace(r'[0-9]*', "")
+    
+    """
+    I tried to erase all whitespace from genbank file, then look for ORIGIN, then
+    everything else until the end, then try not to get either numbers or special chars (//)
+    but I can't, I'm sorry
+    """
+    f= f.upper()
+    return f
 
 #----------------------------------------------------------------------

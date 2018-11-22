@@ -1,0 +1,17 @@
+============================= test session starts ==============================
+platform linux -- Python 3.6.5, pytest-3.5.1, py-1.5.3, pluggy-0.6.0
+rootdir: /home/tarda/Escriptori/examen_py/2pt1 (còpia), inifile:
+plugins: remotedata-0.2.1, openfiles-0.3.0, doctestplus-0.1.3, arraydiff-0.2
+collected 0 items / 1 errors
+
+==================================== ERRORS ====================================
+_________________________ ERROR collecting e1_test.py __________________________
+e1_test.py:8: in <module>
+    import e1
+e1.py:41: in <module>
+    print(get_dna_seq(genbank_txt))
+e1.py:26: in get_dna_seq
+    f= match.group(1)
+E   AttributeError: 'callable_iterator' object has no attribute 'group'
+!!!!!!!!!!!!!!!!!!! Interrupted: 1 errors during collection !!!!!!!!!!!!!!!!!!!!
+=========================== 1 error in 0.10 seconds ============================
